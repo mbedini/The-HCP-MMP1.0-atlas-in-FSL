@@ -1,11 +1,13 @@
 ## The HCP multi-modal parcellation 1.0 atlas in FSL
 
-The purpose of this repository is to offer a 'quick and dirty' way to visualize and interrogate the HCP multi-modal parcellation 1.0 (HCP-MMP1) atlas in FSL (version > 6.0), and to compare it with results that were originally reported in MNI coordinates, in fMRI meta-analytic techniques, or to examine correspondences with other cortical parcellations.
+The purpose of this repository is to offer a 'quick and dirty' way to visualize and interrogate the Human Connectome Project multi-modal parcellation 1.0 (HCP-MMP1) atlas in FSL (version > 6.0), and to compare it with results that were originally reported in MNI coordinates, in fMRI meta-analytic techniques, or to examine correspondences with other cortical parcellations.
 In particular, after importing the atlas in FSL, it will be possible to visualize it in FSLeyes and to use the atlasquery utility to interrogate it from the terminal.
 
 **Disclaimer**: Please note that this project is not meant to endorse or encourage in any way the usage of the HCP-MMP1 atlas for new analyses performed using volumetric registration techniques. The motivations are thoroughly discussed in Coalson, T. S., Van Essen, D. C., & Glasser, M. F. (2018). The impact of traditional neuroimaging methods on the spatial localization of cortical areas. Proceedings of the National Academy of Sciences of the United States of America, 115(27), E6356–E6365. (https://doi.org/10.1073/pnas.1801582115). Therefore, I decline any responsibility that would potentially result from misinterpretation or incorrect usage of the data and of the methods presented below.
 
-For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the MMP1 atlas, such as Fsaverage, please consult the following projects and documentation: [Thomas Yeo lab's github] (https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/registration/Wu2017_RegistrationFusion)
+For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the MMP1 atlas, such as Fsaverage, please consult the following projects and documentation:
+
+[Thomas Yeo lab's github] (https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/registration/Wu2017_RegistrationFusion)
 [Mapping from fs_LR to Fsaverage] (https://figshare.com/articles/HCP-MMP1_0_projected_on_fsaverage/3498446)
 [HCP Wiki] (https://wiki.humanconnectome.org/download/attachments/63078513/Resampling-FreeSurfer-HCP.pdf)
 
@@ -56,15 +58,15 @@ These values were used to replace the list of labels and coordinates from the ex
 
 ### Importing the atlas in FSL
 
--1. To download the HCP-MMP1 atlas without installing AFNI download the [latest atlas repository](https://afni.nimh.nih.gov/pub/dist/tgz/atlases_latest.tgz) of the package. Unzip the folder and copy the file "MNI_Glasser_HCP_v1.0.nii.gz" in your /downloads_path/. Reorient the file to match the orientation that it's best liked by FSLeyes with the fslreorient2std command:
+- To download the HCP-MMP1 atlas without installing AFNI download the [latest atlas repository](https://afni.nimh.nih.gov/pub/dist/tgz/atlases_latest.tgz) of the package. Unzip the folder and copy the file "MNI_Glasser_HCP_v1.0.nii.gz" in your /downloads_path/. Reorient the file to match the orientation that it's best liked by FSLeyes with the fslreorient2std command:
 ```
 $ fslreorient2std /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz
 ```
--2 (optional step). Download the MNI152 template from [AFNI](https://afni.nimh.nih.gov/pub/dist/tgz/suma_MNI152_2009.tgz). Unzip it and copy the file "T1.nii" where you prefer. This is the structural image to which the MMP1 atlas was mapped onto, and should correspond to the ICBM 2009c nonlinear asymmetric template.
+- (optional step) Download the MNI152 template from [AFNI](https://afni.nimh.nih.gov/pub/dist/tgz/suma_MNI152_2009.tgz). Unzip it and copy the file "T1.nii" where you prefer. This is the structural image to which the MMP1 atlas was mapped onto, and should correspond to the ICBM 2009c nonlinear asymmetric template.
 
--3. Download the file "HCP-Multi-Modal-Parcellation-1.0.xml" from this repository.
+- Download the file "HCP-Multi-Modal-Parcellation-1.0.xml" from this repository.
 
--4. Finally, copy the downloaded files in your FSL directory. For example, in a bash terminal, type (prefix all the commands with sudo if you don't have write permission, or switch to root with 'sudo -s'):
+- Finally, copy the downloaded files in your FSL directory. For example, in a bash terminal, type (prefix all the commands with sudo if you don't have write permission, or switch to root with 'sudo -s'):
 
 ```
 $ mkdir /usr/local/fsl/data/atlases/HCP-MMP1
