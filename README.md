@@ -1,0 +1,1 @@
+# The-HCP-multi-modal-parcellation-1.0-atlas-in-FSL
