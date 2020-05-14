@@ -7,9 +7,9 @@ In particular, after importing the atlas in FSL, it will be possible to visualiz
 
 For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the MMP1 atlas, such as Fsaverage, please consult the following projects and documentation:
 
-[Thomas Yeo lab's github] (https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/registration/Wu2017_RegistrationFusion)
-[Mapping from fs_LR to Fsaverage] (https://figshare.com/articles/HCP-MMP1_0_projected_on_fsaverage/3498446)
-[HCP Wiki] (https://wiki.humanconnectome.org/download/attachments/63078513/Resampling-FreeSurfer-HCP.pdf)
+(https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/registration/Wu2017_RegistrationFusion)
+(https://figshare.com/articles/HCP-MMP1_0_projected_on_fsaverage/3498446)
+(https://wiki.humanconnectome.org/download/attachments/63078513/Resampling-FreeSurfer-HCP.pdf)
 
 I also point the interested reader to this [figshare article](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911) which, to the best of my knowledge, was the first to publish a method to map the MMP1 atlas to the MNI space.
 
