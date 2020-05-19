@@ -5,19 +5,19 @@ In particular, after importing the atlas in FSL, it will be possible to visualiz
 
 **Disclaimer**: Please note that this project is not meant to endorse or encourage in any way the usage of the HCP-MMP1 atlas for new analyses performed using volumetric registration techniques. The motivations are thoroughly discussed in Coalson, T. S., Van Essen, D. C., & Glasser, M. F. (2018). The impact of traditional neuroimaging methods on the spatial localization of cortical areas. Proceedings of the National Academy of Sciences of the United States of America, 115(27), E6356–E6365. (https://doi.org/10.1073/pnas.1801582115). Therefore, I decline any responsibility that would potentially result from misinterpretation or incorrect usage of the data and the methods presented in this project.
 
-For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the MMP1 atlas, such as Fsaverage, please consult the following projects and documentation:
+For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the HCP-MMP1 atlas, such as Fsaverage, please consult the following projects and documentation:
 
 - https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/registration/Wu2017_RegistrationFusion
 - https://figshare.com/articles/HCP-MMP1_0_projected_on_fsaverage/3498446
 - https://wiki.humanconnectome.org/download/attachments/63078513/Resampling-FreeSurfer-HCP.pdf
 
-I also point the interested reader to this [figshare article](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911) which, to the best of my knowledge, was the first to publish a method to map the MMP1 atlas to the MNI space.
+I also point the interested reader to this [figshare article](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911) which, to the best of my knowledge, was the first to publish a method to map the HCP-MMP1 atlas to the MNI space.
 
 Finally, please always refer to the [FSL wiki](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases) for an updated list of the available atlases.
 
 ### Description of the process (for instructions on how to import the atlas jump to the [next paragraph](#Importing-the-atlas-in-FSL))
 
-The volumetric version of the MMP1 atlas was released as part of the [AFNI software](https://sscc.nimh.nih.gov/pub/dist/doc/misc/history/afni_hist_level3_all.html).
+The volumetric version of the HCP-MMP1 atlas was released as part of the [AFNI software](https://sscc.nimh.nih.gov/pub/dist/doc/misc/history/afni_hist_level3_all.html).
 
 Release note: 05 Apr 2019, DR Glen, whereami, level 3 (MAJOR), type 3 (NEW_ENV)
     HCP Glasser atlas in AFNI atlases.
@@ -35,10 +35,10 @@ $ afni -ver
 $ Precompiled binary Debian-x86_64-1-gnu: May 17 2018 (Version Debian-18.0.05+git24-gb25b21054~dfsg.1-1~nd17.10+1+nd18.04+1)
 ```
 
-The process of mapping the MMP1 atlas to the MNI152 template is described [here](https://openwetware.org/wiki/Beauchamp:CorticalSurfaceHCP).
+The process of mapping the HCP-MMP1 atlas to the MNI152 template is described [here](https://openwetware.org/wiki/Beauchamp:CorticalSurfaceHCP).
 
-The volumetric version of the MMP1 atlas was initially downloaded from the [AFNI repository](https://afni.nimh.nih.gov/pub/dist/tgz/atlases_latest.tgz).
-The MMP1 atlas has 180 labels per hemisphere, each associated with its discrete intensity value and label index (from 1 to 180 for the left hemisphere, and from 1000 to 1180 for the right hemisphere). The Talairach atlas in /usr/local/fsl/data/atlases was used as a template .xml file and modified to create the file associated with the MMP1 atlas following the instructions found in the [FSLeyes documentation](https://users.fmrib.ox.ac.uk/~paulmc/fsleyes/userdoc/latest/customising.html#customising).
+The volumetric version of the HCP-MMP1 atlas was initially downloaded from the [AFNI repository](https://afni.nimh.nih.gov/pub/dist/tgz/atlases_latest.tgz).
+The MMP1 atlas has 180 labels per hemisphere, each associated with its discrete intensity value and label index (from 1 to 180 for the left hemisphere, and from 1000 to 1180 for the right hemisphere). The Talairach atlas in /usr/local/fsl/data/atlases was used as a template .xml file and modified to create the file associated with the HCP-MMP1 atlas following the instructions found in the [FSLeyes documentation](https://users.fmrib.ox.ac.uk/~paulmc/fsleyes/userdoc/latest/customising.html#customising).
 
 The ordered list of MMP1 labels was downloaded [here](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911).
 
@@ -62,7 +62,7 @@ These values were used to replace the list of labels and coordinates from the ex
 ```
 $ fslreorient2std /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz
 ```
-- (optional step) Download the MNI152 template from [AFNI](https://afni.nimh.nih.gov/pub/dist/tgz/suma_MNI152_2009.tgz). Unzip it and copy the file "T1.nii" where you prefer. This is the structural image to which the MMP1 atlas was mapped onto, and should correspond to the ICBM 2009c nonlinear asymmetric template.
+- (optional step) Download the MNI152 template from [AFNI](https://afni.nimh.nih.gov/pub/dist/tgz/suma_MNI152_2009.tgz). Unzip it and copy the file "T1.nii" where you prefer. This is the structural image to which the HCP-MMP1 atlas was mapped onto, and should correspond to the ICBM 2009c nonlinear asymmetric template.
 
 - Download the file "HCP-Multi-Modal-Parcellation-1.0.xml" from this repository.
 
