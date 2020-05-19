@@ -3,7 +3,7 @@
 The purpose of this repository is to offer a 'quick and dirty' way to visualize and query the Human Connectome Project multi-modal parcellation 1.0 (HCP-MMP1) atlas in FSL (version > 6.0), and to compare it with results that were originally reported in MNI coordinates, in fMRI meta-analytic techniques, or to examine correspondences with other cortical parcellations.
 In particular, after importing the atlas in FSL, it will be possible to visualize it in FSLeyes and to use the atlasquery utility to interrogate it from the terminal.
 
-**Disclaimer**: Please note that this project is not meant to endorse or encourage in any way the usage of the HCP-MMP1 atlas for new analyses performed using volumetric registration techniques. The motivations are thoroughly discussed in Coalson, T. S., Van Essen, D. C., & Glasser, M. F. (2018). The impact of traditional neuroimaging methods on the spatial localization of cortical areas. Proceedings of the National Academy of Sciences of the United States of America, 115(27), E6356–E6365. (https://doi.org/10.1073/pnas.1801582115). Therefore, I decline any responsibility that would potentially result from misinterpretation or incorrect usage of the data and of the methods presented below.
+**Disclaimer**: Please note that this project is not meant to endorse or encourage in any way the usage of the HCP-MMP1 atlas for new analyses performed using volumetric registration techniques. The motivations are thoroughly discussed in Coalson, T. S., Van Essen, D. C., & Glasser, M. F. (2018). The impact of traditional neuroimaging methods on the spatial localization of cortical areas. Proceedings of the National Academy of Sciences of the United States of America, 115(27), E6356–E6365. (https://doi.org/10.1073/pnas.1801582115). Therefore, I decline any responsibility that would potentially result from misinterpretation or incorrect usage of the data and the methods presented below.
 
 For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the MMP1 atlas, such as Fsaverage, please consult the following projects and documentation:
 
@@ -42,7 +42,7 @@ The MMP1 atlas has 180 labels per hemisphere, each associated with its discrete 
 
 The ordered list of MMP1 labels was downloaded [here](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911).
 
-First, the atlas was reoriented to match the orientation that it's best liked by FSLeyes with the command:
+First, the atlas was reoriented to match the orientation that it's best-liked by FSLeyes with the command:
 
 ```
 $ fslreorient2std MNI_Glasser_HCP_v1.0.nii.gz MNI_Glasser_HCP_v1.0.nii.gz
@@ -58,7 +58,7 @@ These values were used to replace the list of labels and coordinates from the ex
 
 ### Importing the atlas in FSL
 
-- To download the HCP-MMP1 atlas without installing AFNI download the [latest atlas repository](https://afni.nimh.nih.gov/pub/dist/tgz/atlases_latest.tgz) of the package. Unzip the folder and copy the file "MNI_Glasser_HCP_v1.0.nii.gz" in your /downloads_path/. Reorient the file to match the orientation that it's best liked by FSLeyes with the fslreorient2std command:
+- To download the HCP-MMP1 atlas without installing AFNI download the [latest atlas repository](https://afni.nimh.nih.gov/pub/dist/tgz/atlases_latest.tgz) of the package. Unzip the folder and copy the file "MNI_Glasser_HCP_v1.0.nii.gz" in your /downloads_path/. Reorient the file to match the orientation that it's best-liked by FSLeyes with the fslreorient2std command:
 ```
 $ fslreorient2std /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz
 ```
@@ -75,7 +75,7 @@ $ cp /your_downloads_path/HCP-Multi-Modal-Parcellation-1.0.xml /usr/local/fsl/da
 ```
 ### Using the atlas in FSL and FSLeyes
 
-In FSLeyes you can now either load the file, or click on Settings - Orto View 1 - Atlas panel (shortcut Ctrl+Alt+6) to open the atlas panel window, and tick the corresponding box ("HCP-MMP1") to explore your data.
+In FSLeyes you can now either load the file, or click on Settings - Orto View 1 - Atlas panel (shortcut Ctrl+Alt+6) to open the atlas panel window and tick the corresponding box ("HCP-MMP1") to explore your data.
 In a bash terminal, type the following commands to query a nifti mask or a single coordinate, and to retrieve the MMP1 label that corresponds to it:
 
 ```
