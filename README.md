@@ -1,17 +1,19 @@
 ## The HCP multi-modal parcellation 1.0 atlas in FSL
 
 The purpose of this repository is to offer a 'quick and dirty' way to visualize and query the Human Connectome Project multi-modal parcellation 1.0 (HCP-MMP1) atlas in FSL (version > 6.0), and to compare it with results that were originally reported in MNI coordinates, results of fMRI meta-analytic techniques, or to examine correspondences with other parcellations.
-In particular, after importing the atlas in FSL, it will be possible to visualize it in FSLeyes and to use the atlasquery utility to query the atlas from the terminal.
+Particularly, after importing the atlas in FSL, it will be possible to visualize it in FSLeyes and to use the atlasquery utility to query the atlas from the terminal.
 
 **Disclaimer**: Please note that this project is not meant to endorse or encourage in any way the usage of the HCP-MMP1 atlas for new analyses performed using volumetric registration techniques. The motivations are thoroughly discussed in Coalson, T. S., Van Essen, D. C., & Glasser, M. F. (2018). The impact of traditional neuroimaging methods on the spatial localization of cortical areas. Proceedings of the National Academy of Sciences of the United States of America, 115(27), E6356–E6365. (https://doi.org/10.1073/pnas.1801582115). Therefore, I decline any responsibility that would potentially result from misinterpretation or incorrect usage of the data and the methods presented in this project.
 
-For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the HCP-MMP1 atlas, such as Fsaverage, please consult the following projects and documentation:
+For an accurate method of mapping existing data from the MNI152 standard to a surface template compatible with the HCP-MMP1 atlas (e.g. Fsaverage) please see the following projects and documentation:
 
 - https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/registration/Wu2017_RegistrationFusion
 - https://figshare.com/articles/HCP-MMP1_0_projected_on_fsaverage/3498446
 - https://wiki.humanconnectome.org/download/attachments/63078513/Resampling-FreeSurfer-HCP.pdf
 
-I also point the interested reader to this [figshare article](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911) which, to the best of my knowledge, was the first to publish a method to map the HCP-MMP1 atlas to the MNI space.
+
+For a reference about how to map the HCP-MMP1 atlas to the MNI space see: [figshare article](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911)
+
 
 Finally, please always refer to the [FSL wiki](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlases) for an updated list of the available atlases.
 
@@ -38,23 +40,23 @@ $ Precompiled binary Debian-x86_64-1-gnu: May 17 2018 (Version Debian-18.0.05+gi
 The process of mapping the HCP-MMP1 atlas to the MNI152 template is described [here](https://openwetware.org/wiki/Beauchamp:CorticalSurfaceHCP).
 
 The volumetric version of the HCP-MMP1 atlas was initially downloaded from the [AFNI repository](https://afni.nimh.nih.gov/pub/dist/tgz/atlases_latest.tgz).
-The MMP1 atlas has 180 labels per hemisphere, each associated with its discrete intensity value and label index (from 1 to 180 for the left hemisphere, and from 1000 to 1180 for the right hemisphere). The Talairach atlas in /usr/local/fsl/data/atlases was used as a template .xml file and modified to create the file associated with the HCP-MMP1 atlas following the instructions found in the [FSLeyes documentation](https://users.fmrib.ox.ac.uk/~paulmc/fsleyes/userdoc/latest/customising.html#customising).
+The MMP1 atlas has 180 labels per hemisphere, each associated with its discrete intensity value and label index (from 1 to 180 for the left hemisphere, and from 1000 to 1180 for the right hemisphere). The Talairach atlas in /usr/local/fsl/data/atlases was used as a template .xml file to create the file associated with the HCP-MMP1 atlas following the instructions found in the [FSLeyes documentation](https://users.fmrib.ox.ac.uk/~paulmc/fsleyes/userdoc/latest/customising.html#customising).
 
 The ordered list of MMP1 labels was downloaded [here](https://figshare.com/articles/HCP-MMP1_0_projected_on_MNI2009a_GM_volumetric_in_NIfTI_format/3501911).
 
-First, the atlas was reoriented to match the orientation that it's best-liked by FSLeyes with the command:
+First, the atlas was reoriented to match FSLeyes orientation:
 
 ```
 $ fslreorient2std MNI_Glasser_HCP_v1.0.nii.gz MNI_Glasser_HCP_v1.0.nii.gz
 ```
 
-Then the following command was used to get the center of gravity of each label (the -K pre-option allows to treat them as separate sub-masks):
+Then the center of gravity of each label (the -K pre-option allows to treat them as separate sub-masks) was set and written in a .txt file:
 
 ```
 $ fslstats -K MNI_Glasser_HCP_v1.0.nii.gz MNI_Glasser_HCP_v1.0.nii.gz -C >> HCP-MMP1_COG.txt
 ```
 
-These values were used to replace the list of labels and coordinates from the example template "Talairach.xml" file.
+Finally, these values were used to replace the list of labels and coordinates from the example template "Talairach.xml" file.
 
 ### Importing the atlas in FSL
 
