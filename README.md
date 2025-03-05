@@ -86,9 +86,9 @@ $ atlasq ohi -a HCP-Multi-Modal-Parcellation-1.0 -c X,Y,Z
 That's it! I hope that this is of any use to you.
 If you have any questions or suggestions on how to improve this project, please send an email to marco.bedini@univ-amu.fr.
 
-Author and affiliation:
-Marco Bedini,
-Postdoc, inVibe team
+Author and affiliation: \
+Marco Bedini, \
+Postdoc, inVibe team \
 Institut de Neurosciences de la Timone
 
 #### References
