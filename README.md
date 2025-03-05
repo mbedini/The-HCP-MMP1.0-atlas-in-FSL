@@ -24,8 +24,7 @@ Release note: 05 Apr 2019, DR Glen, whereami, level 3 (MAJOR), type 3 (NEW_ENV)
     HCP Glasser atlas in AFNI atlases.
 
     Mike Beauchamp and Meghan Robinson contributed atlas. Now included and first in default list too
-    This atlas is in MNI space (not in its original Contee
-    grayordinate surface space.
+    This atlas is in MNI space (not in its original Contee grayordinate surface space.
     Additionally, all the pmaps (probability maps) have been
     removed from the standard distribution and default list
 
@@ -85,13 +84,12 @@ $ atlasq ohi -a HCP-Multi-Modal-Parcellation-1.0 -c X,Y,Z
 ```
 
 That's it! I hope that this is of any use to you.
-For questions and suggestions on how to improve this project please send an email to marco.bedini@unitn.it.
+If you have any questions or suggestions on how to improve this project, please send an email to marco.bedini@univ-amu.fr.
 
 Author and affiliation:
 Marco Bedini,
-Ph.D. student,
-Center for Mind/Brain Sciences,
-University of Trento.
+Postdoc, inVibe team
+Institut de Neurosciences de la Timone
 
 #### References
 - https://www.nature.com/articles/nature18933
