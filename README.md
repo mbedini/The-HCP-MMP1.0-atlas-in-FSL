@@ -76,9 +76,13 @@ $ cp /your_downloads_path/HCP-Multi-Modal-Parcellation-1.0.xml /usr/local/fsl/da
 ```
 ### Using the atlas in FSL and FSLeyes
 
-In FSLeyes you can now either load the file, or click on Settings - Orto View 1 - Atlas panel (shortcut Ctrl+Alt+6) to open the atlas panel window and tick the corresponding box ("HCP-Multi-Modal-Parcellation-1.0") to explore your data.
+In FSLeyes you can now either load the atlas file directly, or click on Settings - Orto View 1 - Atlas panel (shortcut Ctrl+Alt+6) to open the atlas panel window and tick the corresponding box ("HCP-Multi-Modal-Parcellation-1.0") to explore your own masks.
+
+![FSLeyes atlas panel showing the HCP-MMP1 parcellation](images/fsleyes_mmp1_atlas_view.png)
+*Figure: The HCP-MMP1 atlas appears now among the options you can load in FSLeyes. Clicking show on a given label, for example FEF, will show the corresponding volumetric mask overlay.*
+
 In the terminal, you can now also use the [atlasquery utility](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlasquery).
-For example, type the following commands to query a nifti mask or a single coordinate, and to retrieve the HCP-MMP1 label that corresponds to it:
+Just type the following commands to query a nifti mask or a single coordinate, and to retrieve the HCP-MMP1 label that corresponds to it:
 ```
 $ atlasq ohi -a HCP-Multi-Modal-Parcellation-1.0 -m your_mask.nii.gz
 $ atlasq ohi -a HCP-Multi-Modal-Parcellation-1.0 -c X,Y,Z
