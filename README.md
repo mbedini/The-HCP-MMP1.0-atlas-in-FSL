@@ -24,7 +24,8 @@ Release note: 05 Apr 2019, DR Glen, whereami, level 3 (MAJOR), type 3 (NEW_ENV)
     HCP Glasser atlas in AFNI atlases.
 
     Mike Beauchamp and Meghan Robinson contributed atlas. Now included and first in default list too
-    This atlas is in MNI space (not in its original Contee grayordinate surface space.
+    This atlas is in MNI space (not in its original Contee
+    grayordinate surface space.
     Additionally, all the pmaps (probability maps) have been
     removed from the standard distribution and default list
 
@@ -78,7 +79,7 @@ $ cp /your_downloads_path/HCP-Multi-Modal-Parcellation-1.0.xml /usr/local/fsl/da
 In FSLeyes you can now either load the atlas file directly, or click on Settings - Orto View 1 - Atlas panel (shortcut Ctrl+Alt+6) to open the atlas panel window and tick the corresponding box ("HCP-Multi-Modal-Parcellation-1.0") to explore your own masks.
 
 ![FSLeyes atlas panel showing the HCP-MMP1 parcellation](images/fsleyes_mmp1_atlas_view.png)
-*Figure: The HCP-MMP1 atlas appears now among the options you can load in FSLeyes. Clicking show on a given label, for example FEF, will show the corresponding volumetric mask overlay.*
+*Figure: The HCP-MMP1 atlas appears now among the options you can load in FSLeyes. Clicking show on a given label, for example FEF, will bring up the corresponding volumetric mask overlay.*
 
 In the terminal, you can now also use the [atlasquery utility](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Atlasquery).
 Just type the following commands to query a nifti mask or a single coordinate, and to retrieve the HCP-MMP1 label that corresponds to it:
@@ -87,12 +88,11 @@ $ atlasq ohi -a HCP-Multi-Modal-Parcellation-1.0 -m your_mask.nii.gz
 $ atlasq ohi -a HCP-Multi-Modal-Parcellation-1.0 -c X,Y,Z
 ```
 
-That's it! I hope that this is of any use to you.
-If you have any questions or suggestions on how to improve this project, please send an email to marco.bedini@univ-amu.fr.
+That's it! I hope that this is useful. If you have any questions or suggestions on how to improve this project, please send an email to marco.bedini@univ-amu.fr.
 
-Author and affiliation: \
-Marco Bedini, \
-Postdoc, inVibe team \
+Author and affiliation:
+Marco Bedini,
+Postdoc, inVibe team
 Institut de Neurosciences de la Timone
 
 #### References
