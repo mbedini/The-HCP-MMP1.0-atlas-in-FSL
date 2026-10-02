@@ -63,7 +63,7 @@ Finally, the labels from the "Talairach.xml" file were replaced by the ordered l
 ```
 $ fslreorient2std /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz /your_downloads_path/MNI_Glasser_HCP_v1.0.nii.gz
 ```
-- (optional step) Download the MNI152 template from [AFNI](https://afni.nimh.nih.gov/pub/dist/tgz/suma_MNI152_2009.tgz). Unzip it and copy the file "T1.nii" where you prefer. This is the structural image to which the HCP-MMP1 atlas was mapped onto, and should correspond to the ICBM 2009c nonlinear asymmetric template.
+- (optional step) Download the MNI152 template from [AFNI](https://afni.nimh.nih.gov/pub/dist/tgz/suma_MNI152_2009.tgz). Unzip it and copy the file "T1.nii" where you prefer. This is the structural image to which the HCP-MMP1 atlas was mapped onto, and should correspond to the ICBM 2009c nonlinear asymmetric template. Please note you also need to reorient this image using the previous command.
 
 - Download the file "HCP-Multi-Modal-Parcellation-1.0.xml" from this repository.
 
